@@ -12,6 +12,10 @@ pub async fn task_manager(action: String, parameter: String) -> String {
             search_manager("close");
             return "Rust Backend: Try to end the search".to_string();
         },
+        "full-only" => {
+            search::start_search(&parameter, false, true);
+            return "Rust Backend: Started search successfully".to_string();
+        },
         _ => {return "Rust Backend: ERROR action not found".to_string();}
     }
 }
@@ -23,5 +27,5 @@ fn search_manager(parameter: &str) {
         search::set_search_id(0)
     }
     search::set_search_runner(true);
-    search::start_search(parameter);
+    search::start_search(parameter, true, true);
 }
