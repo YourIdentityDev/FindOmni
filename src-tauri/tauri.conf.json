@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "identifier": "com.youridentity.findomni",
   "build": {
-    "frontendDist": "../src"
+    "frontendDist": "../src",
+    "features": ["app-lib"]
   },
   "app": {
     "withGlobalTauri": true,

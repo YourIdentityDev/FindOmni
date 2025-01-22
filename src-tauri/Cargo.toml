@@ -15,16 +15,24 @@ name = "findomni_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
-tauri-build = { version = "2", features = [] }
+tauri-build = { version = "2.0.5", features = [] }
 
 [dependencies]
-tauri = { version = "2", features = [] }
-tauri-plugin-opener = "2"
+tauri = { version = "2.2.3", features = [] }
+tauri-plugin-opener = "2.2.5"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+log = "0.4.25"
 device_query = "2.1.0"
 rdev = "0.5.3"  #hotkey listener
 rayon = "1.10.0"    #filesearch
 walkdir = "2.5.0"   #filesearch
 tokio = { version = "1", features = ["full"] }
+regex = "1.11.1"
 
+[dependencies.tauri-plugin-log]
+version = "2.2.0"
+
+[features]
+default = ["app-lib"]
+app-lib = []
